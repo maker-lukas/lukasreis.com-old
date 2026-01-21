@@ -1,0 +1,82 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FooterNav from "../components/FooterNav.astro";
+const { title, description = "Lukas Reis - 16 year old developer, maker, and Hack Club member. Building cool projects with code, hardware, and PCBs. Explore my blog and projects." } = Astro.props;
+
+import "../styles/global.css"
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/src/images/icon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="keywords" content="Lukas Reis, OrangoPontoTango, capitaoananas, developer, maker" />
+		<meta name="author" content="Lukas Reis" />
+		
+		<!-- Open Graph -->
+		<meta property="og:title" content={title || "Lukas Reis"} />
+		<meta property="og:description" content="Lukas Reis - Developer, maker, and Hack Club member" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		
+		<!-- JSON-LD Schema for Person -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Lukas Reis",
+			"url": "https://lukasreis.com",
+			"sameAs": [
+				"https://github.com/capitaoananas"
+			],
+			"jobTitle": "Developer & Maker",
+			"description": "Developer, maker, and Hack Club member building cool projects"
+		}
+		</script>
+		
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="desktop">
+			<Header />
+		</div>
+		<main>
+			<slot />
+		</main>
+		<div class="desktop">
+			<Footer />
+		</div>
+		<div class="mobile">
+			<FooterNav />
+		</div>
+	</body>
+
+<style is:global>
+	.desktop {
+		display: block;
+	}
+	
+	.mobile {
+		display: none;
+	}
+
+	@media (max-width: 700px) {
+		.desktop {
+			display: none;
+		}
+		
+		.mobile {
+			display: block;
+		}
+		
+		body {
+			padding-bottom: 200px;
+		}
+	}
+</style>
+</html>

@@ -1,0 +1,173 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import FormattedDate from '../components/FarmattedDate.astro';
+import Layout from './Layout.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+const { title, description, pubDate } = Astro.props;
+const id = Astro.url.pathname.split('/').pop();
+---
+
+<Layout title={`lukas/blog/${id}`}>
+    <div class="page-grid">
+        <div class="card">
+            <div class="frontmatter">
+                <h1>{title}</h1>
+                <p>{description}</p>
+                <p>
+                    <FormattedDate date={pubDate} />
+                </p>
+            </div>
+            <slot />
+            <script is:inline src="https://giscus.app/client.js"
+                    data-repo="maker-lukas/lukasreis.com"
+                    data-repo-id="R_kgDOQrrsrQ"
+                    data-category="General"
+                    data-category-id="DIC_kwDOQrrsrc4C0hYf"
+                    data-mapping="pathname"
+                    data-strict="0"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="top"
+                    data-theme="https://lukasreis.com/giscus_theme.css"
+                    data-lang="en"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .frontmatter {
+        text-align: center;
+        background-color: #7550A1;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+	.page-grid {
+		display: grid;
+		place-items: center;
+		padding-top: 100px;
+		padding-bottom: 50px;
+		min-height: 100vh;
+	}
+
+    .card {
+        background-color: #8B5FBF;
+        border-radius: 20px;
+        padding: 15px;
+        height: auto;
+        width: 100%;
+        max-width: 810px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+    
+    :global(pre) {
+        background-color:#171717 !important;
+        padding: 15px;
+        border-radius: 10px;
+        overflow-x: auto;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    :global(code) {
+        font-size: 14px;
+        white-space: pre;
+        word-break: normal;
+    }
+
+    :global(p) {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+    :global(ol),
+    :global(ul) {
+        margin-left: 20px;
+        margin-bottom: 15px;
+    }
+
+    :global(li) {
+        margin-bottom: 8px;
+        line-height: 1.6;
+    }
+
+    :global(img) {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    :global(a) {
+        color: white;
+        font-weight: bold;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    :global(.link:link) {
+        text-decoration: underline;
+    }
+
+    :global(.link:hover, .link:active) {
+        text-decoration: none;
+    }
+
+    :global(.warning) {
+        color: yellow;
+    }
+
+    :global(h2) {
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+    }
+
+    :global(hr) {
+        border: none;
+        border-top: 2px solid #ECD444;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+
+    :global(h3) {
+        margin-top: 1.25em;
+        margin-bottom: 0.5em;
+    }
+
+    :global(.codelet) {
+        background-color: #171717;
+        border-radius: 5px;
+        padding-inline: 3px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+
+    :global(blockquote) {
+        border-left: 4px solid white;
+        margin: 15px 0 15px 0;
+        padding-left: 15px;
+        padding-top: 5px;
+        font-style: italic;
+        color: #E5D5F5;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        padding-right: 15px;
+    }
+
+    @media (max-width: 700px) {
+        .card {
+            width: calc(100vw - 30px);
+            padding: 15px;
+        }
+    }
+
+</style>

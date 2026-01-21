@@ -1,0 +1,150 @@
+---
+---
+
+<div class="now-playing-wrapper">
+    <div class="now-playing hidden">
+        <img class="album-art" src="" alt="Album art" />
+        <div class="track-info">
+            <span class="label">Now Playing</span>
+            <div class="scroll-container">
+                <a class="song" href="" target="_blank"></a>
+            </div>
+            <a class="artist" href="" target="_blank"></a>
+        </div>
+    </div>
+    <p class="no-music">No Music Playing</p>
+</div>
+
+<style>
+    .now-playing-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .now-playing {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .no-music {
+        font-size: 18px;
+        opacity: 0.7;
+    }
+
+    .album-art {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+    }
+
+    .track-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 80px;
+        position: relative;
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .label {
+        font-size: 12px;
+        opacity: 0.6;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        position: absolute;
+        top: 0;
+        white-space: nowrap;
+    }
+
+    .scroll-container {
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .song {
+        font-size: 15px;
+        font-weight: bold;
+        white-space: nowrap;
+        display: inline-block;
+    }
+
+    .song.scrolling {
+        animation: scroll-text 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes scroll-text {
+        0%, 15% {
+            transform: translateX(0);
+        }
+        85%, 100% {
+            transform: translateX(var(--scroll-distance));
+        }
+    }
+
+    .artist {
+        font-size: 14px;
+        opacity: 0.7;
+    }
+
+    a {
+        color: white;
+    }
+</style>
+
+<script>
+    async function fetchNowPlaying() {
+        const res = await fetch('http://localhost:3000/now-playing');
+        const data = await res.json();
+        
+        const containers = document.querySelectorAll('.now-playing');
+        const noMusicEls = document.querySelectorAll('.no-music');
+        
+        if (!data.playing) {
+            containers.forEach(c => c.classList.add('hidden'));
+            noMusicEls.forEach(n => n.classList.remove('hidden'));
+            return;
+        }
+        
+        containers.forEach(c => c.classList.remove('hidden'));
+        noMusicEls.forEach(n => n.classList.add('hidden'));
+        
+        document.querySelectorAll('.album-art').forEach(img => img.setAttribute('src', data.image));
+        
+        document.querySelectorAll('.song').forEach(songEl => {
+            songEl.textContent = data.song;
+            songEl.setAttribute('href', data.songUrl);
+            
+            // Check if song title overflows and needs scrolling
+            requestAnimationFrame(() => {
+                const container = songEl.parentElement!;
+                const overflow = songEl.scrollWidth - container.clientWidth;
+                if (overflow > 0) {
+                    (songEl as HTMLElement).style.setProperty('--scroll-distance', `-${overflow + 10}px`);
+                    songEl.classList.add('scrolling');
+                } else {
+                    songEl.classList.remove('scrolling');
+                }
+            });
+        });
+        
+        document.querySelectorAll('.artist').forEach(artistEl => {
+            artistEl.textContent = data.artist;
+            artistEl.setAttribute('href', data.artistUrl);
+        });
+    }
+    
+    fetchNowPlaying();
+    setInterval(fetchNowPlaying, 3000);
+</script>

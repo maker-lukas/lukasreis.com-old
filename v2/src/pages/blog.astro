@@ -1,0 +1,59 @@
+---
+import BlogGrid from '../components/BlogGrid.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="lukas/blog">
+	<div class="page-grid">
+		<div class="card blogs-grid">
+            <h1>Blog</h1>
+			<BlogGrid />
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.page-grid {
+		display: grid;
+		place-items: center;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		min-height: 100vh;
+	}
+
+	.blogs-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 43px repeat(4, 130px);
+		grid-gap: 15px;
+	}
+
+    .card {
+        background-color: #8B5FBF;
+        border-radius: 20px;
+        padding: 15px;
+        height: auto;
+		width: 100%;
+		align-self: center;
+        text-align: center;
+	}
+
+	h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+	}
+
+	@media (max-width: 700px) {
+		.blogs-grid {
+			grid-template-rows: 35px repeat(4, 200px);
+
+		}
+
+		h1 {
+			font-size: 25px;
+		}
+		
+	}
+
+</style>

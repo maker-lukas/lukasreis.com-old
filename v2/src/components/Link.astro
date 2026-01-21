@@ -1,0 +1,35 @@
+---
+const { page, text = '' } = Astro.props;
+---
+
+<a class="link" href={page}><span class="desktop">{text} →</span><span class="mobile">More →</span></a>
+
+<style>
+    .link {
+        font-size: 20px;
+        font-weight: bold;
+        color: #FFFFFF;
+        white-space: nowrap;
+        width: fit-content;
+        justify-self: end;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    @media (max-width: 700px) {
+        .link {
+            font-size: 15px;
+        }
+
+        .desktop {
+            display: none;
+        }
+
+        .mobile {
+            display: inline;
+        }
+    }
+
+</style>

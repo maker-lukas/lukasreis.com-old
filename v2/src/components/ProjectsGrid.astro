@@ -1,0 +1,43 @@
+---
+import Dial from "../components/projects/Dial.astro";
+import Keyboard from "../components/projects/Keyboard.astro";
+import Bett from "./projects/Bett.astro";
+import Firefly from "./projects/Firefly.astro";
+import Xbox from "./projects/Xbox.astro";
+
+---
+
+<h1>Projects</h1>
+<div class="project"><Keyboard /></div>
+<div class="project"><Dial /></div>
+<div class="project"><Firefly /></div>
+<div class="project"><Xbox /></div>
+<div class="project"><Bett/></div>
+<div class="project">6</div>
+
+<style>
+    .project {
+        padding: 15px;
+        background-color: #7550A1;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        grid-column: span 3;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (max-width: 700px) {
+        h1 {
+            grid-column: span 1;
+            font-size: 25px;
+        }
+    }
+
+</style>
