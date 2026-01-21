@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/src/images/icon.svg"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v5.16.6"><meta name="description" content="Lukas Reis - 16 year old developer, maker, and Hack Club member. Building cool projects with code, hardware, and PCBs. Explore my blog and projects."><meta name="keywords" content="Lukas Reis, OrangoPontoTango, capitaoananas, developer, maker"><meta name="author" content="Lukas Reis"><!-- Open Graph --><meta property="og:title" content="lukas/blog/"><meta property="og:description" content="Lukas Reis - Developer, maker, and Hack Club member"><meta property="og:type" content="website"><meta property="og:url" content="https://lukasreis.com/blog/minecraft-resource-pack-tutorial/"><!-- JSON-LD Schema for Person --><script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Lukas Reis",
+			"url": "https://lukasreis.com",
+			"sameAs": [
+				"https://github.com/capitaoananas"
+			],
+			"jobTitle": "Developer & Maker",
+			"description": "Developer, maker, and Hack Club member building cool projects"
+		}
+		</script><title>lukas/blog/</title><style>.frontmatter[data-astro-cid-bvzihdzo]{text-align:center;background-color:#7550a1;border-radius:10px;padding:15px;margin-bottom:15px}.page-grid[data-astro-cid-bvzihdzo]{display:grid;place-items:center;padding-top:100px;padding-bottom:50px;min-height:100vh}.card[data-astro-cid-bvzihdzo]{background-color:#8b5fbf;border-radius:20px;padding:15px;height:auto;width:100%;max-width:810px}h1[data-astro-cid-bvzihdzo]{font-size:32px}pre{background-color:#171717!important;padding:15px;border-radius:10px;overflow-x:auto;margin-top:15px;margin-bottom:15px;width:100%;box-sizing:border-box}code{font-size:14px;white-space:pre;word-break:normal}p{margin-bottom:15px;line-height:1.6}ol,ul{margin-left:20px;margin-bottom:15px}li{margin-bottom:8px;line-height:1.6}img{width:100%;height:auto;border-radius:10px}a{color:#fff;font-weight:700;overflow-wrap:break-word;word-break:break-word}.link:link{text-decoration:underline}.link:hover,.link:active{text-decoration:none}.warning{color:#ff0}h2{margin-top:1.5em;margin-bottom:.5em}hr{border:none;border-top:2px solid #ECD444;margin-top:1.5em;margin-bottom:1.5em}h3{margin-top:1.25em;margin-bottom:.5em}.codelet{background-color:#171717;border-radius:5px;padding-inline:3px;padding-top:1px;padding-bottom:1px}blockquote{border-left:4px solid white;margin:15px 0;padding-left:15px;padding-top:5px;font-style:italic;color:#e5d5f5;background-color:#0003;border-radius:5px;padding-right:15px}@media(max-width:700px){.card[data-astro-cid-bvzihdzo]{width:calc(100vw - 30px);padding:15px}}
+a[data-astro-cid-3ef6ksr2],span[data-astro-cid-3ef6ksr2]{color:#171717}header[data-astro-cid-3ef6ksr2]{height:50px;background-color:#ecd444;border-radius:0 0 20px 20px;font-weight:700;font-size:20px;position:fixed;inset-inline:0;top:0;display:flex;align-items:center;justify-content:space-between;padding-inline:15px;margin-inline:max(calc((100% - 810px)/2),15px)}a[data-astro-cid-sz7xmlte]{color:#171717;margin:0;font-size:16px;font-weight:700}a[data-astro-cid-sz7xmlte]:link{text-decoration:underline}a[data-astro-cid-sz7xmlte]:active,a[data-astro-cid-sz7xmlte]:hover{text-decoration:none}footer[data-astro-cid-sz7xmlte]{height:130px;background-color:#ecd444;margin:auto;text-align:center;border-radius:20px 20px 0 0;padding:15px 0 10px;display:flex;flex-direction:column;justify-content:space-between}p[data-astro-cid-sz7xmlte]{font-weight:700;font-size:16px;color:#171717}@media(max-width:700px){footer[data-astro-cid-sz7xmlte]{border-radius:0}}a[data-astro-cid-livlyet2],span[data-astro-cid-livlyet2]{color:#171717}.footer-nav[data-astro-cid-livlyet2]{position:fixed;bottom:0;inset-inline:0;background-color:#ecd444;border-radius:20px 20px 0 0;max-width:670px;margin-inline:max(calc((100% - 670px)/2),15px);z-index:100;display:flex;flex-direction:column;font-weight:700;font-size:20px}.nav[data-astro-cid-livlyet2]{display:flex;align-items:center;justify-content:center;height:50px;padding-inline:20px;gap:10px}footer[data-astro-cid-livlyet2]{padding:15px;text-align:center;border-top:2px solid #171717}footer[data-astro-cid-livlyet2] p[data-astro-cid-livlyet2]{font-weight:700;font-size:16px;color:#171717;margin:0}footer[data-astro-cid-livlyet2] a[data-astro-cid-livlyet2]{font-size:16px}footer[data-astro-cid-livlyet2] a[data-astro-cid-livlyet2]:link{text-decoration:underline}footer[data-astro-cid-livlyet2] a[data-astro-cid-livlyet2]:active,footer[data-astro-cid-livlyet2] a[data-astro-cid-livlyet2]:hover{text-decoration:none}@font-face{font-family:JetBrainsMono;src:url(/_astro/jetmono.DgTxpPXt.ttf)}main{min-height:100vh}a:link{text-decoration:none}a:hover,a:active{text-decoration:underline}body{background-color:#171717;font-family:JetBrainsMono;color:#fff;position:relative;padding-inline:max(calc((100% - 810px)/2),15px)}*{box-sizing:border-box;margin:0;padding:0}.link{text-align:end;margin-top:auto;margin-bottom:auto}@media(max-width:700px){body{padding-inline:15px}p{font-size:16px}h1{font-size:28px}h2{font-size:22px}h3{font-size:18px}h4,h5,h6{font-size:16px}}.desktop{display:block}.mobile{display:none}@media(max-width:700px){.desktop{display:none}.mobile{display:block}body{padding-bottom:200px}}
+</style></head> <body> <div class="desktop"> <header data-astro-cid-3ef6ksr2> <a class="home" href="/" data-astro-cid-3ef6ksr2>Lukas Reis</a> <nav class="nav" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2>Home</a> <span data-astro-cid-3ef6ksr2> / </span> <a href="/blog" data-astro-cid-3ef6ksr2>Blog</a> <span data-astro-cid-3ef6ksr2> / </span> <a href="/projects" data-astro-cid-3ef6ksr2>Projects</a> </nav> </header>  </div> <main>  <div class="page-grid" data-astro-cid-bvzihdzo> <div class="card" data-astro-cid-bvzihdzo> <div class="frontmatter" data-astro-cid-bvzihdzo> <h1 data-astro-cid-bvzihdzo>Minecraft Enchanted Textures Tutorial</h1> <p data-astro-cid-bvzihdzo>Learn how to make enchantment specific textures</p> <p data-astro-cid-bvzihdzo> <time datetime="2026-01-02T00:00:00.000Z"> Jan 2, 2026 </time> </p> </div>  <p>This is what you’ll get after this tutorial</p>
+<p><img alt="gif image" loading="lazy" decoding="async" fetchpriority="auto" width="800" height="450" src="/_astro/fire_aspect.DjnQwS-0_Z1odDMi.webp" ></p>
+<h2 id="before-you-start">Before You Start</h2>
+<ul>
+<li><strong>Resources</strong>
+<ul>
+<li>My Resource Pack <a href="https://github.com/maker-lukas/B.E.T.T" class="link">github.com/maker-lukas/B.E.T.T</a></li>
+<li><a href="https://minecraft.wiki/w/Tutorial:Creating_a_resource_pack" class="link">minecraft.wiki/Tutorial:Creating_a_resource_pack</a></li>
+</ul>
+</li>
+<li><strong>What you’ll Need</strong>
+<ul>
+<li>Text Editor (VS Code, NotePad++, etc)</li>
+<li>Minecraft version <strong>1.21.5+</strong> (older versions do not support data driven item models)</li>
+<li>Basic understanding of json</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="getting-started">Getting Started</h2>
+<p>Below is the folder structure used in this tutorial.<br>
+It is already organized so you can add more enchantments later.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>project_root/</span></span>
+<span class="line"><span>├── pack.mcmeta</span></span>
+<span class="line"><span>├── pack.png</span></span>
+<span class="line"><span>│</span></span>
+<span class="line"><span>└── assets/</span></span>
+<span class="line"><span>    └── minecraft/</span></span>
+<span class="line"><span>        ├── models/</span></span>
+<span class="line"><span>        │   └── item/</span></span>
+<span class="line"><span>        │       └── sword/</span></span>
+<span class="line"><span>        │           └── diamond/</span></span>
+<span class="line"><span>        │               └── fire_aspect.json</span></span>
+<span class="line"><span>        │</span></span>
+<span class="line"><span>        ├── textures/</span></span>
+<span class="line"><span>        │   └── item/</span></span>
+<span class="line"><span>        │       └── sword/</span></span>
+<span class="line"><span>        │           ├── diamond/</span></span>
+<span class="line"><span>        │           │   └── diamond_sword.png</span></span>
+<span class="line"><span>        │           │</span></span>
+<span class="line"><span>        │           └── shared/</span></span>
+<span class="line"><span>        │               ├── fire_aspect.png</span></span>
+<span class="line"><span>        │               └── fire_aspect.png.mcmeta</span></span>
+<span class="line"><span>        │</span></span>
+<span class="line"><span>        └── items/</span></span>
+<span class="line"><span>            └── diamond_sword.json</span></span></code></pre>
+<hr>
+<h2 id="packmcmeta">pack.mcmeta</h2>
+<p>Create <span class="codelet"><code>pack.mcmeta</code></span> at the root of your project.
+Because this tutorial uses <strong>data-driven item models</strong>, the resource
+pack must target <strong>Minecraft 1.21.5 or newer</strong>.</p>
+<p>The <span class="codelet"><code>min_format</code></span> value of <span class="codelet"><code>55</code></span> corresponds to Minecraft <strong>1.21.5</strong>,
+which is when this feature was introduced.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "pack"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "description"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"your pack description"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "min_format"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">55</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h2 id="packpng">pack.png</h2>
+<p><span class="codelet"><code>pack.png</code></span> can be any square PNG image.<br>
+This is just the icon shown in the resource pack menu.</p>
+<hr>
+<h2 id="enchantment-texture">Enchantment Texture</h2>
+<p>Next, add the texture that represents the enchantment effect.</p>
+<p>In this example, the Fire Aspect texture is animated, so it uses a sprite sheet.</p>
+<p>You can download my sprite sheet here:
+<a href="../../../public/images/fire_aspect.png" download class="link">fire_aspect.png</a></p>
+<p>Place the file here:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>assets/minecraft/textures/item/sword/shared/</span></span></code></pre>
+<h3 id="animated-texture">Animated Texture</h3>
+<p>If your texture is animated, create a file with the same name +
+<span class="codelet"><code>.mcmeta</code></span>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>fire_aspect.png.mcmeta</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "animation"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "frametime"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Minecraft runs at <strong>20 ticks per second</strong>, so:</p>
+<ul>
+<li><span class="codelet"><code>frametime: 20</code></span> = 1
+second</li>
+<li><span class="codelet"><code>frametime: 0.1</code></span> = 0.1 seconds per frame</li>
+</ul>
+<hr>
+<h2 id="item-model-enchantment-overlay">Item Model (Enchantment Overlay)</h2>
+<p>Now we create the model that combines the base sword with the enchantment texture</p>
+<p>Create this file:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>assets/minecraft/models/item/sword/diamond/fire_aspect.json</span></span></code></pre>
+<p>This model uses the default handheld sword model and renders two texture layers</p>
+<ul>
+<li><span class="codelet"><code>layer0</code></span> renders first</li>
+<li><span class="codelet"><code>layer1</code></span> renders on top of 0</li>
+</ul>
+<p>In my texture i want the Fire Aspect under the sword texture but if you have custom texture the layer order might be diffrent</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "parent"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"minecraft:item/handheld"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "textures"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "layer0"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"minecraft:item/sword/shared/fire_aspect"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "layer1"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"minecraft:item/sword/diamond/diamond_sword"</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<blockquote>
+<p>Note: Texture paths never include .png</p>
+</blockquote>
+<hr>
+<h2 id="enchantment-detection">Enchantment Detection</h2>
+<p>This part tels Minecraft when to switch models based on enchantments</p>
+<p>Create this file:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>assets/minecraft/items/diamond_sword.json</span></span></code></pre>
+<p><span class="warning">WARNING</span>
+JSON does not support comments. The comments below are for explanation only and must be removed in the final file.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsonc"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "model"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#6A737D">        // Composite type allows combining multiple models</span></span>
+<span class="line"><span style="color:#79B8FF">        "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"minecraft:composite"</span><span style="color:#E1E4E8">, </span></span>
+<span class="line"><span style="color:#79B8FF">        "models"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#6A737D">            // Base model: render the default diamond sword</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span></span>
+<span class="line"><span style="color:#79B8FF">                "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"minecraft:model"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">                "model"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"minecraft:item/diamond_sword"</span></span>
+<span class="line"><span style="color:#E1E4E8">            },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">            // Conditional model: check if item has Fire Aspect enchantment</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span></span>
+<span class="line"><span style="color:#79B8FF">                "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"minecraft:condition"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">                "property"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"minecraft:component"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">                "predicate"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"minecraft:enchantments"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">                // Define which enchantment to look for</span></span>
+<span class="line"><span style="color:#79B8FF">                "value"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">                    {</span></span>
+<span class="line"><span style="color:#79B8FF">                        "enchantments"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"minecraft:fire_aspect"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">                        "levels"</span><span style="color:#E1E4E8">: {</span><span style="color:#79B8FF">"min"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    }</span></span>
+<span class="line"><span style="color:#E1E4E8">                ],</span></span>
+<span class="line"><span style="color:#6A737D">                // If enchantment is present: render the fire aspect overlay model</span></span>
+<span class="line"><span style="color:#79B8FF">                "on_true"</span><span style="color:#E1E4E8">: {</span><span style="color:#79B8FF">"type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"minecraft:model"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">"model"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"minecraft:item/sword/diamond/fire_aspect"</span><span style="color:#E1E4E8">},</span></span>
+<span class="line"><span style="color:#79B8FF">                "on_false"</span><span style="color:#E1E4E8">: {</span><span style="color:#79B8FF">"type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"minecraft:empty"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        ]</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h2 id="adding-more-enchantments">Adding More Enchantments</h2>
+<p>To add additional enchantments:</p>
+<ol>
+<li>Copy the entire <span class="codelet"><code>minecraft:condition</code></span> block including the brackets</li>
+<li>Paste it directly after the previous one</li>
+<li>Change:
+<ul>
+<li>Enchantment ID</li>
+<li>Model path</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="packaging">Packaging</h2>
+<p>Zip the following files:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>assets/</span></span>
+<span class="line"><span>pack.mcmeta</span></span>
+<span class="line"><span>pack.png</span></span></code></pre>
+<p>You can rename the <span class="codelet"><code>.zip</code></span> file however you want</p>
+<hr>
+<h2 id="testing-in-game">Testing In Game</h2>
+<ol>
+<li>Launch Minecraft</li>
+<li>Go to <strong>Options → Resource Packs</strong></li>
+<li>Click <strong>Open Pack Folder</strong></li>
+<li>Drag your <span class="codelet"><code>.zip</code></span> file into the folder</li>
+<li>Enable the pack</li>
+<li>Enter a world and enchant a diamond sword with Fire Aspect</li>
+</ol>
+<p>If everything is correct, the texture should change.</p>
+<hr>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li>Press <span class="codelet">F3 + T</span> to reload resource packs</li>
+<li>Check file paths and enchantment IDs</li>
+</ul>
+<hr>  <script src="https://giscus.app/client.js" data-repo="maker-lukas/lukasreis.com" data-repo-id="R_kgDOQrrsrQ" data-category="General" data-category-id="DIC_kwDOQrrsrc4C0hYf" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="https://lukasreis.com/giscus_theme.css" data-lang="en" crossorigin="anonymous" async>
+            </script> </div> </div>  </main> <div class="desktop"> <footer data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>
+Made with <span data-astro-cid-sz7xmlte>&lt;3</span> by Lukas using
+<a href="https://astro.build" data-astro-cid-sz7xmlte>Astro</a> </p> <div data-astro-cid-sz7xmlte> <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" data-astro-cid-sz7xmlte>AGPL-3.0</a> <p data-astro-cid-sz7xmlte>
+Source at
+<a href="https://github.com/maker-lukas/lukasreis.com" data-astro-cid-sz7xmlte>GitHub</a> </p> </div> </footer>  </div> <div class="mobile"> <div class="footer-nav" data-astro-cid-livlyet2> <nav class="nav" data-astro-cid-livlyet2> <a href="/" data-astro-cid-livlyet2>Home</a> <span data-astro-cid-livlyet2> / </span> <a href="/blog" data-astro-cid-livlyet2>Blog</a> <span data-astro-cid-livlyet2> / </span> <a href="/projects" data-astro-cid-livlyet2>Projects</a> </nav> <footer data-astro-cid-livlyet2> <p data-astro-cid-livlyet2>
+Made with <span data-astro-cid-livlyet2>&lt;3</span> by Lukas using
+<a href="https://astro.build" data-astro-cid-livlyet2>Astro</a> </p> <div data-astro-cid-livlyet2> <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" data-astro-cid-livlyet2>AGPL-3.0</a> <p data-astro-cid-livlyet2>
+Source at
+<a href="https://github.com/maker-lukas/lukasreis.com" data-astro-cid-livlyet2>GitHub</a> </p> </div> </footer> </div>  <script type="module">const t=document.querySelector(".footer-nav"),e=document.querySelector(".footer-nav footer");if(t&&e){let o=function(){(window.scrollY+window.innerHeight)/document.documentElement.scrollHeight>.98?e.style.display="block":e.style.display="none"};window.addEventListener("scroll",o),o()}</script> </div>  </body></html> 
