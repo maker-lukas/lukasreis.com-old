@@ -9,6 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
+    "@astrojs/mdx": "^4.3.13",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
     "@fontsource/jetbrains-mono": "^5.2.8",
     "@js-temporal/polyfill": "^0.5.1",

@@ -1,10 +1,9 @@
 ---
-
-
+import NowPlaying from "./NowPlaying.astro";
 ---
 
 <div class="inner inner-1">
-    <div class="intro">
+    <div>
         <h1>Hya! I'm Lukas.</h1>
         <p class="age">A 16 year old human</p>
         <p class="about">About:</p>
@@ -20,21 +19,14 @@
     <div class="stats">
         <div id="utc-clock">--:--:-- --</div>
         <span>/</span>
-        <p>status</p>
+        <p id="slack-status">...</p>
     </div>
 </div>
 <div class="inner inner-3">
-    <p>Now Playing</p>
-    <p>Still need to setup a backend for this</p>
+    <NowPlaying />
 </div>
 <div class="inner inner-4">
-    <img class="image-4"
-    src="../images/lukas.jpg"
-    alt="picture of lukas"/>
-    <div class="now-playing">
-        <p class="in4">Now Playing</p>
-        <p class="in4">Still need to setup a backend for this</p>
-    </div>
+    <NowPlaying />
 </div>
 
 <style>
@@ -75,7 +67,10 @@
         grid-area: three;
         height: 110px;
         padding: 15px;
-
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
     }
 
     .inner-4 {
@@ -203,6 +198,19 @@
         `${hours}:${minutes}:${seconds} ${ampm}`;
     }
 
+    async function updateSlackStatus() {
+        try {
+            const res = await fetch('/api/slack-status');
+            const { online } = await res.json();
+            document.getElementById('slack-status').textContent = online ? 'online' : 'offline';
+        } catch {
+            document.getElementById('slack-status').textContent = 'offline';
+        }
+    }
+
     updateClock();
     setInterval(updateClock, 1000);
+
+    updateSlackStatus();
+    setInterval(updateSlackStatus, 60000);
 </script>
